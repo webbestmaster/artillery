@@ -1,0 +1,15 @@
+config:
+  target: "http://your-site-here.com/"
+  phases:
+    - duration: 10000
+      arrivalRate: 5
+  processor: "./my-functions.js"
+scenarios:
+  - flow:
+    - post:
+        url: "/path/to/smth"
+        beforeRequest: "setJSONBody"
+        afterResponse: "logHeaders"
+        formData:
+          field1: "string"
+          field2: 4
